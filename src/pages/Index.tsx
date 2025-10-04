@@ -1,21 +1,25 @@
-import { ModernHeader } from "@/components/ModernHeader";
-import { ModernHero } from "@/components/ModernHero";
-import { AboutVision } from "@/components/AboutVision";
-import { BentoServices } from "@/components/BentoServices";
-import { ModernCTA } from "@/components/ModernCTA";
-import { ModernFooter } from "@/components/ModernFooter";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Services } from "@/components/Services";
+import { Differentials } from "@/components/Differentials";
+import { Stats } from "@/components/Stats";
+import { CTA } from "@/components/CTA";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <ModernHeader />
+      <Header />
       <main>
-        <ModernHero />
-        <AboutVision />
-        <BentoServices />
-        <ModernCTA />
+        <Hero />
+        <About />
+        <Services />
+        <Differentials />
+        <Stats />
+        <CTA />
       </main>
-      <ModernFooter />
+      <Footer />
     </div>
   );
 };
