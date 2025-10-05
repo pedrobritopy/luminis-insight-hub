@@ -6,6 +6,7 @@ import { Link2, ArrowLeft, CheckCircle2, Boxes, Cloud, Network, Database } from 
 import { Footer } from "@/components/Footer";
 
 export default function IntegracaoDados() {
+  // Página de Integração de Dados
   const benefits = [
     "Sincronização em tempo real entre sistemas",
     "Eliminação de silos de informação",
