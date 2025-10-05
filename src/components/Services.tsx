@@ -1,42 +1,36 @@
 import { BarChart3, Zap, Link2, TrendingUp, Database, LineChart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: BarChart3,
-    title: "Projetos de BI Completos",
+    title: "Business Intelligence",
     description: "Desenvolvimento de dashboards interativos, relatórios estratégicos e KPIs personalizados que realmente impulsionam seu negócio.",
     features: ["Dashboards Interativos", "Relatórios Customizados", "KPIs Estratégicos", "Análise Preditiva"],
+    link: "/bi",
   },
   {
     icon: Zap,
-    title: "Automação Inteligente",
+    title: "Automação de Processos",
     description: "Eliminamos processos morosos e repetitivos através de automação avançada, liberando sua equipe para atividades estratégicas.",
     features: ["RPA (Robotic Process Automation)", "Workflows Automatizados", "Redução de Custos", "Ganho de Eficiência"],
+    link: "/rpa",
   },
   {
     icon: Link2,
     title: "Integração de Dados",
     description: "Conectamos sistemas internos e externos para envio e consumo de informações em tempo real, criando um ecossistema de dados integrado.",
     features: ["APIs REST/SOAP", "ETL/ELT Pipelines", "Data Warehousing", "Sincronização em Tempo Real"],
-  },
-  {
-    icon: TrendingUp,
-    title: "Análise Avançada",
-    description: "Transformamos grandes volumes de dados em insights acionáveis através de análises estatísticas e machine learning.",
-    features: ["Análise Preditiva", "Data Mining", "Segmentação de Clientes", "Forecasting"],
-  },
-  {
-    icon: Database,
-    title: "Governança de Dados",
-    description: "Implementamos práticas de qualidade, segurança e conformidade para garantir a confiabilidade dos seus dados.",
-    features: ["Data Quality", "Master Data Management", "LGPD Compliance", "Data Cataloging"],
+    link: "/integra",
   },
   {
     icon: LineChart,
     title: "Consultoria Estratégica",
     description: "Orientamos sua empresa na jornada de transformação digital através de estratégias baseadas em dados.",
     features: ["Data Strategy", "Digital Transformation", "Change Management", "Training & Enablement"],
+    link: "/consult",
   },
 ];
 
@@ -57,7 +51,7 @@ export function Services() {
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <Card 
               key={service.title} 
@@ -73,7 +67,7 @@ export function Services() {
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <ul className="space-y-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm">
@@ -82,6 +76,11 @@ export function Services() {
                     </li>
                   ))}
                 </ul>
+                <Link to={service.link}>
+                  <Button variant="outline" className="w-full mt-2">
+                    Saiba Mais
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
